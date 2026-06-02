@@ -1,21 +1,22 @@
 ---
 name: safe-mode
-description: toggle safe mode to prevent destructive commands and provide basic production safety guardrails. Use `/safe-mode on` to activate, or `/safe-mode off` to deactivate.
+description: toggle safe mode to prevent destructive commands and provide basic production safety guardrails. Use `safe mode on` to activate, or `safe mode off` to deactivate.
 license: WTFPL
 metadata:
   author: Rolf Vreijdenberger
 ---
 
 # usage
-
+Invoked via `safe mode`, `safe-mode` or similar patterns.
+or via `/safe-mode` as a command.
 Invoke this skill with an optional parameter:
 
 ```text
-/safe-mode on
-/safe-mode off
+safe mode on
+safe mode off
 ```
 
-Arguments after `/safe-mode` are provided as user input to this skill.
+Arguments after `safe mode` are provided as user input to this skill.
 
 - `on` or no parameter: activate safe mode and follow the rules below.
 - `off`: deactivate safe mode; the restrictions below no longer apply, while normal user instructions, tool policies, and platform safety requirements still apply.
@@ -23,7 +24,7 @@ Arguments after `/safe-mode` are provided as user input to this skill.
 
 ## scope and duration
 
-When enabled, safe mode remains active for this conversation/session until `/safe-mode off` is invoked.
+When enabled, safe mode remains active for this conversation/session until `safe mode off` is invoked.
 
 If uncertain whether safe mode is currently on or off, behave as if safe mode is on.
 
@@ -106,7 +107,7 @@ If uncertain whether a command or action can change, destroy, overwrite, remove,
 When invoked as:
 
 ```text
-/safe-mode off
+safe mode off
 ```
 
 Deactivate safe mode. In this mode, the extra safe-mode restrictions are removed when commands are explicitly requested by the user, subject to normal user instructions, tool policies, and platform safety requirements.
